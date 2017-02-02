@@ -1,0 +1,192 @@
+
+
+
+#shoot-div{
+  background-color: white;
+  width: 200px;
+  height: 300px;
+  border-radius:10px;
+  position:absolute;
+  top:80px;
+  left:60px;
+  margin-left: 40px;
+  opacity: 0.9;
+  text-align: center;
+
+}
+#shoot-div img{
+  width:130px;
+  height: 60px;
+  opacity: 2;
+}
+
+ #shoot-div li{
+   list-style: none;
+ }
+ #shoot-div span{
+   font-size: 50px;
+ }
+
+#header{
+  align-self: center;
+  color:white;
+}
+#ocean{
+  background-color:white;
+  width:370px;
+  height:370px;
+  margin-left: 430px;
+  top:60px;
+  position: absolute;
+  border-radius: 10px;
+
+}
+#container{
+  width: 100%;
+  height: 550px;
+  background-image: url(../img/back3.jpeg);
+  background-size: 100% 100%;
+  float:left;
+  padding-bottom: 30px;
+  top:30px
+}
+#radar{
+  width: 130px;
+  height: 130px;
+}
+
+#boats{
+  background-color:white;
+  position:absolute;
+  left:900px;
+  padding-top: 10px;
+  padding-right: 60px;
+  padding-bottom: 10px;
+  border-radius: 10px;
+  top:30px;
+  opacity: 0.9;
+
+
+  }
+#boats li {
+  list-style: none;
+  align-self: center;
+}
+#boats h4 {
+  text-align: center
+}
+#boat1{
+  width: 200px;
+  height: 60px;
+  opacity:0.1;
+}
+#boat2{
+  width: 180px;
+  height: 40px;
+  opacity:0.1;
+}
+#boat3{
+  width: 160px;
+  height: 40px;
+  opacity:0.1;
+}
+#boat4{
+  width: 140px;
+  height: 40px;
+  opacity:0.1;
+}
+#boat5{
+  width: 120px;
+  height: 30px;
+  opacity:0.1;
+}
+
+
+#terminal{
+  position: absolute;
+  bottom:-10px;
+  width: 900px;
+  height: 100px;
+  border-style: solid;
+  border-color: black;
+  left:200px;
+  margin-bottom: 25px;
+  background-color: black;
+  color:#00FF24;
+  padding-left: 5px;
+  padding-top:5px;
+  font-size: 0.7em;
+}
+#terminal input{
+  width: 450px;
+  background-color: black;
+  color:#00FF24;
+  margin-top:70px;
+  font-size: 2em;
+  font-family: 'VT323', monospace;
+    opacity: 0.9;
+}
+#text-area{
+  background-color: black;
+  color:#00FF24;
+  font-size: 1em;
+  font-family: 'VT323', monospace;
+  position:absolute;
+  height: 60px;
+  width: 450px;
+
+}
+#instruccions{
+  background-color: black;
+  position:absolute;
+  left:500px;
+  font-size: 2em;
+  font-family: 'VT323', monospace;
+}
+.water {
+  background-image:url(../img/water.png);
+	width:35px;
+	height:35px;
+	float:left;
+	margin:1px;
+    background-size: cover;
+
+}
+.touch {
+  background-image:url(../img/section-fail.png);
+	width:35px;
+	height:35px;
+	float:left;
+	margin:1px;
+  background-size: cover;
+}
+.fail{
+  background-image:url(../img/waterFail.png);
+	width:35px;
+	height:35px;
+	float:left;
+	margin:1px;
+  background-size: cover;
+  text-shadow: 20px;
+}
+#indice-horizontal{
+
+  left:440px;
+  top:41px;
+  background-color: white;
+  position:absolute;
+ letter-spacing: 13px;
+}
+#indice-vertical{
+      
+    background-color: white;
+    line-height: 37px;
+      position: absolute;
+      width:10px;
+      height:370px;
+      left:430px;
+      top:60px;
+    
+  font-size: 1em;
+  
+  }
