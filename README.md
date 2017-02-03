@@ -13,7 +13,7 @@ The problems that I have encountered when it comes to creating the game, have be
 
 ## Instruccions
 
-The instructions are very simple.<\br>
-To attack with the cannon (attackCanon (x, y)).<\br>
-To attack with the plane (attackPlane (x, y)).<\br>
-To attack with the Bomber (attackBomber (x, y)).<\br>
+The instructions are very simple.<br>
+To attack with the cannon (attackCanon (x, y)).<br>
+To attack with the plane (attackPlane (x, y)).<br>
+To attack with the Bomber (attackBomber (x, y)).<br>
