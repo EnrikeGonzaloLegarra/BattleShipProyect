@@ -218,6 +218,9 @@ function checkCounter(counter) {
   }
 }
 
+
+
+
 var boat1 = new Boats("boat1", 5);
 var boat2 = new Boats("boat2", 4);
 var boat3 = new Boats("boat3", 3);

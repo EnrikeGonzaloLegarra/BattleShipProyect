@@ -39,6 +39,17 @@ function soundCanon() {
   var cazaSound = new Audio("sounds/artilleria.mp3");
   cazaSound.play();
 }
+
+function instructions() {
+  swal({
+    title: "INSTRUCTIONS",
+    imageUrl: "img/instructions.png",
+    imageSize: "400x400",
+    timer: 10000,
+  });
+
+}
 $(document).ready(function() {
   $("#terminal-text").on('keypress', shootMode);
+  instructions();
 });
