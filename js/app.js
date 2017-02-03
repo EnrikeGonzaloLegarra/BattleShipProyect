@@ -1,5 +1,5 @@
 //Oceano debe de ser un objeto
-
+var shootCounter = 1;
 var ocean = [
   ['0', '0', '0', '0', '0', '0', '0', '0', '0', '0'],
   ['0', '0', '0', '0', '0', '0', '0', '0', '0', '0'],
@@ -134,14 +134,16 @@ function getAttack() {
 
 
 function shootCanon() {
-
+  getAttack();
   var commands = document.getElementById('text-area').value;
   var valor = document.getElementById("terminal-text").value;
-  var regex = /(attackCanon|attackPlane|attackBombardero|showRadar)\((\d+),\s*(\d+)\)/;
+  var regex = /(attackCanon|attackPlane|attackBombardero|showRadar)\((\d),\s*(\d)\)/;
   var comando = regex.exec(valor);
   soundCanon();
   if (ocean[comando[2]][comando[3]] == "0") {
     $(`#cell-${comando[2]}-${comando[3]}`).addClass("fail");
+    shootCounter -= 1;
+    checkCounter(shootCounter);
   } else {
     $(`#cell-${comando[2]}-${comando[3]}`).addClass("touch");
   }
@@ -150,7 +152,7 @@ function shootCanon() {
 function shootPlane() {
   var commands = document.getElementById('text-area').value;
   var valor = document.getElementById("terminal-text").value;
-  var regex = /(attackCanon|attackPlane|attackBombardero|showRadar)\((\d+),\s*(\d+)\)/;
+  var regex = /(attackCanon|attackPlane|attackBombardero|showRadar)\((\d),\s*(\d)\)/;
   var comando = regex.exec(valor);
 
   if (ocean[comando[2]][comando[3]] == "0") {
@@ -169,7 +171,7 @@ function shootPlane() {
 function shootBombarsero() {
   var commands = document.getElementById('text-area').value;
   var valor = document.getElementById("terminal-text").value;
-  var regex = /(attackCanon|attackPlane|attackBombardero|showRadar)\((\d+),\s*(\d+)\)/;
+  var regex = /(attackCanon|attackPlane|attackBombardero|showRadar)\((\d),\s*(\d)\)/;
   var comando = regex.exec(valor);
 
   if (ocean[comando[2]][comando[3]] == "0") {
@@ -192,6 +194,13 @@ function shootBombarsero() {
   }
 }
 
+function checkCounter(counter) {
+  debugger
+  if (counter <= 0) {
+    alert("Game Over");
+    $('#terminal-text').hide();
+  }
+}
 
 
 

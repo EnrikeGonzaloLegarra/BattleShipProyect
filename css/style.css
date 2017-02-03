@@ -149,7 +149,7 @@
 	height:35px;
 	float:left;
 	margin:1px;
-    background-size: cover;
+  background-size: cover;
 
 }
 .touch {
@@ -178,7 +178,7 @@
  letter-spacing: 13px;
 }
 #indice-vertical{
-      
+
     background-color: white;
     line-height: 37px;
       position: absolute;
@@ -186,7 +186,7 @@
       height:370px;
       left:430px;
       top:60px;
-    
+
   font-size: 1em;
-  
+
   }
