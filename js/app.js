@@ -1,6 +1,6 @@
 //Oceano debe de ser un objeto
 
-var shootCounter = 28;
+var shootCounter = 20;
 var planeShoot = 1;
 var ocean = [
   ['0', '0', '0', '0', '0', '0', '0', '0', '0', '0'],
@@ -110,7 +110,7 @@ function checkIfBoatFits(Boats) {
 function getAttack() {
   var commands = document.getElementById('text-area').value;
   var valor = document.getElementById("terminal-text").value;
-  var regex = /(attackCanon|attackPlane|attackBombardero|showRadar)\((\d+),\s*(\d+)\)/;
+  var regex = /(attackCanon|attackPlane|attackBomber|showRadar)\((\d+),\s*(\d+)\)/;
   var comando = regex.exec(valor);
 
   document.getElementById('text-area').value += valor + "\n";
@@ -130,7 +130,7 @@ function shootMode(event) {
       if (comando[1] == "attackPlane") {
         movePlane();
         shootPlane(comando);
-      } else if (comando[1] == "attackBombardero") {
+      } else if (comando[1] == "attackBomber") {
         moveBombardero();
         shootBombardero(comando);
       } else if (comando[1] == "showRadar") {
@@ -153,17 +153,10 @@ function shootCanon(comando) {
   }
   shootCounter -= 1;
   checkCounter(shootCounter);
-  //  document.getElementById('text-area').value += valor + "\n";
-  //document.getElementById('text-area').scrollTop = document.getElementById('text-area').scrollHeight;
-  //if (document.getElementById('terminal-text').value == valor) {
-  //document.getElementById('terminal-text').value = "";
-  //}
+
 }
 
-
 function shootPlane(comando, planeShoot) {
-
-
   if (ocean[comando[2]][comando[3]] == "0") {
     $(`#cell-${comando[2]}-${comando[3]}`).addClass("fail");
   } else {
@@ -179,8 +172,11 @@ function shootPlane(comando, planeShoot) {
   checkCounter(shootCounter);
 
 }
+var bomberCount;
 
 function shootBombardero(comando) {
+  bomberCount = +1;
+
   if (ocean[comando[2]][comando[3]] == "0") {
     $(`#cell-${comando[2]}-${comando[3]}`).addClass("fail");
   } else {
@@ -218,16 +214,9 @@ function checkCounter(counter) {
       title: "GAME OVER!!!",
       text: "YOU LOSE!!!",
       confirmButtonText: "Bye"
-
     });
   }
 }
-
-
-
-
-
-
 
 var boat1 = new Boats("boat1", 5);
 var boat2 = new Boats("boat2", 4);
