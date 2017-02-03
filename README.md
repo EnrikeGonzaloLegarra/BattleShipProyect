@@ -6,7 +6,6 @@ Battleship is a game that consists of sinking the 5 boats that are in the sea. W
 ## Motivation
 
 I created this game because I found it interesting to practice two-dimensional arrays, and also to practice methods and control objects.
-## Installation
 
 ##Problems
 
@@ -14,7 +13,7 @@ The problems that I have encountered when it comes to creating the game, have be
 
 ## Instruccions
 
-The instructions are very simple.
-To attack with the cannon (attackCanon (x, y)).
-To attack with the plane (attackPlane (x, y)).
-To attack with the Bomber (attackBomber (x, y))
+The instructions are very simple.__
+To attack with the cannon (attackCanon (x, y)).__
+To attack with the plane (attackPlane (x, y)).__
+To attack with the Bomber (attackBomber (x, y)).__
