@@ -10,8 +10,16 @@ I created this game because I found it interesting to practice two-dimensional a
 ##Problems
 
 The problems that I have encountered when it comes to creating the game, have been a few. But the biggest problem has been to place the boats randomly and do not step on each other (sometimes it happens ...)
+At this moment you have no option to win
 
-## Instruccions
+##Future iterations
+
+Second player
+Finish the game by winning
+Do not place boat in the position of another boat
+
+
+##Instructions
 
 The instructions are very simple.<br>
 To attack with the cannon (attackCanon (x, y)).<br>
