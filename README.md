@@ -14,9 +14,9 @@ At this moment you have no option to win
 
 ##Future iterations
 
-Second player
-Finish the game by winning
-Do not place boat in the position of another boat
+Second player<br>
+Finish the game by winning<br>
+Do not place boat in the position of another boat<br>
 
 
 ##Instructions
