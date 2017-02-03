@@ -1,4 +1,4 @@
-###BATTHLE SHIP GAME
+#BATTHLE SHIP GAME
 ## Synopsis
 
 Battleship is a game that consists of sinking the 5 boats that are in the sea. We have 20 shots to get it, if you do not get those shots you will lose the game
