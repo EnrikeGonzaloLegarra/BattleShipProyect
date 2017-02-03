@@ -1,5 +1,6 @@
 //Oceano debe de ser un objeto
-var shootCounter = 1;
+
+var shootCounter = 2;
 var ocean = [
   ['0', '0', '0', '0', '0', '0', '0', '0', '0', '0'],
   ['0', '0', '0', '0', '0', '0', '0', '0', '0', '0'],
@@ -55,7 +56,7 @@ function shootMode(event) {
         shootPlane();
       } else if (comando[1] == "attackBombardero") {
         moveBombardero();
-        shootBombarsero()
+        shootBombardero()
       } else if (comando[1] == "showRadar") {
         moveRadar();
       } else if (comando[1] == "attackCanon") {
@@ -129,16 +130,18 @@ function getAttack() {
   var valor = document.getElementById("terminal-text").value;
   var regex = /(attackCanon|attackPlane|attackBombardero|showRadar)\((\d+),\s*(\d+)\)/;
   var comando = regex.exec(valor);
+
+  document.getElementById('text-area').value += valor + "\n";
+  document.getElementById('text-area').scrollTop = document.getElementById('text-area').scrollHeight;
+  if (document.getElementById('terminal-text').value == valor) {
+    document.getElementById('terminal-text').value = "";
+  }
   return comando;
 }
 
 
 function shootCanon() {
-  getAttack();
-  var commands = document.getElementById('text-area').value;
-  var valor = document.getElementById("terminal-text").value;
-  var regex = /(attackCanon|attackPlane|attackBombardero|showRadar)\((\d),\s*(\d)\)/;
-  var comando = regex.exec(valor);
+  var comando = getAttack();
   soundCanon();
   if (ocean[comando[2]][comando[3]] == "0") {
     $(`#cell-${comando[2]}-${comando[3]}`).addClass("fail");
@@ -146,60 +149,94 @@ function shootCanon() {
     checkCounter(shootCounter);
   } else {
     $(`#cell-${comando[2]}-${comando[3]}`).addClass("touch");
+    shootCounter -= 1;
+    checkCounter(shootCounter);
+  }
+  document.getElementById('text-area').value += valor + "\n";
+  document.getElementById('text-area').scrollTop = document.getElementById('text-area').scrollHeight;
+  if (document.getElementById('terminal-text').value == valor) {
+    document.getElementById('terminal-text').value = "";
   }
 }
 
 function shootPlane() {
-  var commands = document.getElementById('text-area').value;
-  var valor = document.getElementById("terminal-text").value;
-  var regex = /(attackCanon|attackPlane|attackBombardero|showRadar)\((\d),\s*(\d)\)/;
-  var comando = regex.exec(valor);
-
+  var comando = getAttack();
   if (ocean[comando[2]][comando[3]] == "0") {
     $(`#cell-${comando[2]}-${comando[3]}`).addClass("fail");
+    shootCounter -= 1;
+    checkCounter(shootCounter);
   } else {
     $(`#cell-${comando[2]}-${comando[3]}`).addClass("touch");
+    shootCounter -= 1;
+    checkCounter(shootCounter);
   }
   var newComando3 = parseInt(comando[3]) + 1;
   if (ocean[comando[2]][newComando3] == "0") {
     $(`#cell-${comando[2]}-${newComando3}`).addClass("fail");
+    shootCounter -= 1;
+    checkCounter(shootCounter);
   } else {
     $(`#cell-${comando[2]}-${newComando3}`).addClass("touch");
+    shootCounter -= 1;
+    checkCounter(shootCounter);
+  }
+  document.getElementById('text-area').value += valor + "\n";
+  document.getElementById('text-area').scrollTop = document.getElementById('text-area').scrollHeight;
+  if (document.getElementById('terminal-text').value == valor) {
+    document.getElementById('terminal-text').value = "";
   }
 }
 
-function shootBombarsero() {
-  var commands = document.getElementById('text-area').value;
-  var valor = document.getElementById("terminal-text").value;
-  var regex = /(attackCanon|attackPlane|attackBombardero|showRadar)\((\d),\s*(\d)\)/;
-  var comando = regex.exec(valor);
+function shootBombardero() {
+  var comando = getAttack();
 
   if (ocean[comando[2]][comando[3]] == "0") {
     $(`#cell-${comando[2]}-${comando[3]}`).addClass("fail");
+    shootCounter -= 1;
+    checkCounter(shootCounter);
   } else {
     $(`#cell-${comando[2]}-${comando[3]}`).addClass("touch");
+    shootCounter -= 1;
+    checkCounter(shootCounter);
   }
   var newComando3 = parseInt(comando[3]) + 1;
   if (ocean[comando[2]][newComando3] == "0") {
     $(`#cell-${comando[2]}-${newComando3}`).addClass("fail");
+    shootCounter -= 1;
+    checkCounter(shootCounter);
   } else {
     $(`#cell-${comando[2]}-${newComando3}`).addClass("touch");
+    shootCounter -= 1;
+    checkCounter(shootCounter);
   }
   var newComando4 = parseInt(comando[3]) + 1;
   var newComando5 = parseInt(comando[2]) + 1;
   if (ocean[newComando5][newComando4] == "0") {
     $(`#cell-${newComando5}-${newComando4}`).addClass("fail");
+    shootCounter -= 1;
+    checkCounter(shootCounter);
   } else {
     $(`#cell-${newComando5}-${newComando4}`).addClass("touch");
+    shootCounter -= 1;
+    checkCounter(shootCounter);
+  }
+  document.getElementById('text-area').value += valor + "\n";
+  document.getElementById('text-area').scrollTop = document.getElementById('text-area').scrollHeight;
+  if (document.getElementById('terminal-text').value == valor) {
+    document.getElementById('terminal-text').value = "";
   }
 }
 
 function checkCounter(counter) {
-  debugger
+
   if (counter <= 0) {
     alert("Game Over");
     $('#terminal-text').hide();
   }
+}
+
+function checkBoatSunken() {
+
 }
 
 
