@@ -40,5 +40,5 @@ function soundCanon() {
   cazaSound.play();
 }
 $(document).ready(function() {
-
+  $("#terminal-text").on('keypress', shootMode);
 });
